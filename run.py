@@ -2,8 +2,8 @@
 import pickle5 as pickle
 import torch
 
-from model import Transformer
-from utils2 import infer
+from .model import Transformer
+from .utils2 import infer
 from tokenizers import Tokenizer
 
 
@@ -32,7 +32,7 @@ class Translator:
                                  pad_index=config["pad_index"],
                                  )
 
-        self.model.load_state_dict(torch.load(pretrained_weights_path))
+        self.model.load_state_dict(torch.load(pretrained_weights_path, map_location=torch.device("cpu")))
 
     def translate(self, text):
 
