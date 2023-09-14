@@ -2,8 +2,8 @@
 import pickle5 as pickle
 import torch
 
-from .model import Transformer
-from .utils2 import infer
+from model import Transformer
+from utils2 import infer
 from tokenizers import Tokenizer
 
 
